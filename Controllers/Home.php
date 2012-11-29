@@ -2,7 +2,7 @@
 namespace Modules\PanappDashboard\Controllers;
 use Resources;
 
-class Home extends Resources\Controller
+class Home extends \Controllers\Template
 {
     public function __construct()
     {
@@ -11,6 +11,7 @@ class Home extends Resources\Controller
     
     public function index()
     {
-        echo 'Hello world!';
+        $data['title'] = "Login";
+        $this->render('Account/login', $data);
     }
 }
