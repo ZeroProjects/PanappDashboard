@@ -1,12 +1,9 @@
 <?php
 
-namespace Controllers;
+namespace Modules\PanappDashboard\Controllers;
+use Resources;
 
-use Resources,
-    Models,
-    Libraries;
-
-class Template extends Resources\Controller {
+class Template extends \Resources\Controller {
 
     public $template = 'layout';
     public $website;

@@ -1,5 +1,5 @@
 <?php
-if(!defined('APP'))
+if (!defined('APP'))
     die("Direct access not allowed!");
 ?>
 <!DOCTYPE html>
@@ -14,12 +14,12 @@ if(!defined('APP'))
         <?php
         foreach ($styles as $file => $type)
             echo Libraries\Html::style($file, array('media' => $type)), PHP_EOL
-        ?>
+            ?>
         <?php
         foreach ($scripts as $file)
             echo $scripts;
         ?>
-        
+
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,14 +28,14 @@ if(!defined('APP'))
         <!-- Fav and touch icons -->
         <!--
         <?php
-            echo '<link' . Libraries\Html::attributes( array('href'=> $this->website['base_url'].'statics/bootstrap/favicon.ico', 'rel'=>'shortcut icon' ) ) . '>', PHP_EOL
+        echo '<link' . Libraries\Html::attributes(array('href' => $this->website['base_url'] . 'statics/bootstrap/favicon.ico', 'rel' => 'shortcut icon')) . '>', PHP_EOL
         ?>
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
         -->
-        
+
     </head>
 
     <body>
@@ -52,9 +52,9 @@ if(!defined('APP'))
             </div>
 
             <hr>
-            
-            <?php echo $content; ?>
-
+            <div class="content">
+                <?php echo $content; ?>
+            </div>
             <div class="footer">
                 <p>&copy; Company 2012</p>
             </div>
