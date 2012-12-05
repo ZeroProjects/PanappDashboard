@@ -1,7 +1,6 @@
 <?php
 namespace Modules\PanappDashboard\Models;
-use
-    Resources;
+use Resources;
 
 class FormValidation extends \Resources\Validation {
     
@@ -27,7 +26,7 @@ class FormValidation extends \Resources\Validation {
         $this->rule = $this->myRules($rule);
         
         $validate = $this->validate();
-        print_r($this->rule);
+        //print_r($this->rule);
         return $validate;
     }
     

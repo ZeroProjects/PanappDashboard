@@ -25,17 +25,17 @@ class Account extends \Controllers\Template {
             if ($this->auth->validateSignature($this->request->post('signature'))) {
                 $username = $this->request->post('username');
                 $password = $this->request->post('password');
-                if ( $this->formValidation->validateValues('signin') ) {
+                if ($this->formValidation->validateValues('signin')) {
                     if ($this->auth->login($username, $password)) {
                         
                     } else {
-                        $data['loginerrors'] = "Invalid Login!";
+                        $data['signature'] = $this->auth->generateSignature();
                     }
-                }else{
-                    $data['loginerrors'] = "Please !";
+                } else {
+                    $data['signature'] = $this->auth->generateSignature();
                 }
             } else {
-                $data['loginerrors'] = "Error data validation!";
+                $data['signature'] = $this->auth->generateSignature();
             }
         } else {
             $data['signature'] = $this->auth->generateSignature();
@@ -43,4 +43,5 @@ class Account extends \Controllers\Template {
 
         $this->render('Account/login', $data);
     }
+
 }
